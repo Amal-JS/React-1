@@ -68,3 +68,18 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+error: 'React-1/' does not have a commit checked out
+fatal: adding files failed
+
+To solve this there will be .git folder inside 'React-1' folder delete it 
+
+set remote : git remote add origin repo link
+
+
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it :
+
+
+resolve this issue = it config --global core.autocrlf true
