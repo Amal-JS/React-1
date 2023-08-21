@@ -83,3 +83,5 @@ warning: in the working copy of 'README.md', LF will be replaced by CRLF the nex
 
 
 resolve this issue = it config --global core.autocrlf true
+
+git commit -m "inital commit"  : no single qoutes
