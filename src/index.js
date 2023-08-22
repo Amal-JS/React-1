@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import './index.css';
 import App from './App';
-import List2 from './components/List2.js'
+import List from './components/List2.js'
 
 
 //import reportWebVitals from './reportWebVitals';
@@ -132,5 +132,5 @@ import List2 from './components/List2.js'
 //day2
 
 ReactDom.render(
-  <List2 />
+  <List />
   ,document.getElementById('root'))
