@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import './index.css';
 import App from './App';
+import List2 from './components/List2.js'
 
 
 //import reportWebVitals from './reportWebVitals';
@@ -100,29 +101,36 @@ import App from './App';
 //5. array using map
 
 
-const div_style={
-  width:'330px',
-  height:'500px',
-  margin:'25px',
-  backgroundColor:'black', //Camelcase
-  display:'flex',
-  justifyContent:'center',
-  alignItems:'center',
-  color:'white'
+// const div_style={
+//   width:'330px',
+//   height:'500px',
+//   margin:'25px',
+//   backgroundColor:'black', //Camelcase
+//   display:'flex',
+//   justifyContent:'center',
+//   alignItems:'center',
+//   color:'white'
 
-  }
+//   }
 
-const arr = ["Amal JS","Full stack developer","I am great"]
+// const arr = ["Amal JS","Full stack developer","I am great"]
+
+// ReactDom.render(
+
+//   <div style={div_style}>
+//     {
+//       arr.map((data)=>{
+//         return <label key={data} > {data} </label>  //key important point if else error in console will work anyways
+//       })
+//     }
+//   </div>
+
+//   ,document.getElementById('root')
+// )
+
+
+//day2
 
 ReactDom.render(
-
-  <div style={div_style}>
-    {
-      arr.map((data)=>{
-        return <label key={data} > {data} </label>  //key important point if else error in console will work anyways
-      })
-    }
-  </div>
-
-  ,document.getElementById('root')
-)
+  <List2 />
+  ,document.getElementById('root'))
