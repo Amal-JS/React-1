@@ -1,0 +1,15 @@
+.main-div{
+    background-image:
+    linear-gradient(
+      to top right, 
+      red, #f06d06
+    );
+    margin-top:2px;
+    padding:0px;
+    text-align: center;
+}
+
+.label-style{
+    color:whitesmoke;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

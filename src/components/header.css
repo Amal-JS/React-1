@@ -1,0 +1,12 @@
+.header-div{
+    padding: 0px;
+    
+    display: flex;
+    padding-left: 15px;
+    margin-bottom:10px;
+}
+
+.nav-elements{
+    margin: 5px;
+    margin-left:20px;
+}

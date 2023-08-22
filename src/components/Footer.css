@@ -1,0 +1,18 @@
+.footer-div{
+    background-color: black;
+    color:white;
+    padding:5px;
+    display: flex;
+
+}
+.footer-head{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Segoe UI, Tahoma,  Verdana, sans-serif';
+    margin-top:25px;
+}
+
+.footer-text{
+    font-size: 13px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
