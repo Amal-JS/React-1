@@ -1,5 +1,5 @@
 import React from 'react';
-//import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom/client';
 import ReactDom from 'react-dom';
 import './index.css';
 import App from './App';
@@ -131,6 +131,9 @@ import List from './components/List2.js'
 
 //day2
 
-ReactDom.render(
-  <List />
-  ,document.getElementById('root'))
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <List />
+  </React.StrictMode>
+);
