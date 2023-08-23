@@ -121,3 +121,13 @@ Examples:
                 }
 
                 export default Appoinment;
+
+
+----------------------------------------------------------------------------------------------
+Day 3
+
+---------------------------------------------------------------------------------------------
+
+Today we are gonna see how to pass data from one component to another component.
+
+1. Adding a select (dropdown) below header component in List2.js

@@ -1,15 +1,23 @@
 .main-div{
-    background-image:
-    linear-gradient(
-      to top right, 
-      red, #f06d06
-    );
-    margin-top:2px;
-    padding:0px;
-    text-align: center;
+  width:300px;
+  background-color: white;
+  border-radius: 5px;
+  
+   
 }
 
 .label-style{
     color:whitesmoke;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.App-div{
+  background-image:
+  linear-gradient(
+    to top right, 
+    red, #f06d06
+  );
+  margin-top:2px;
+  padding:0px;
+  text-align: center;
 }

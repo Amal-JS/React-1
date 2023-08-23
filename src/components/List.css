@@ -1,6 +1,12 @@
 .list-div{
-    background-image: linear-gradient(to left bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    
     padding:25px;
+    
 
+}
 
+.app-div{
+    margin-top: 50px;
+    display: flex;
+    justify-content:space-around;
 }

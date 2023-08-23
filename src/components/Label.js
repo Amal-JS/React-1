@@ -7,8 +7,9 @@ class Label extends React.Component{
     render(){
 
         return (
-
+            
             <div className="main-div"><span className='label-style'> Label </span></div>
+        
         );
           
     }
