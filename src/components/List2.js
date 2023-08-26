@@ -3,7 +3,7 @@ import Header from './header';
 import Footer from './Footer';
 import Label from './Label';
 import './List.css';
-import Appoinment  from './Appoinment';
+import Appoinment from './Appoinment';
 //day 3 
 import Drop from './Dropdown';
 
@@ -22,10 +22,10 @@ import Drop from './Dropdown';
 
 //day3 
 
-const arr= [ {id : 1,month : 'November',available : true , time :'!5:00' },
-{id : 2,month : 'July',available : false , time :'!1:00' },
-{id : 3,month : 'Januvary',available : true , time :'!2:00' },
-{id : 4,month : 'April',available : false , time :'10:00' }
+const arr = [{ id: 1, month: 'November', available: true, time: '!5:00' },
+{ id: 2, month: 'July', available: false, time: '!1:00' },
+{ id: 3, month: 'Januvary', available: true, time: '!2:00' },
+{ id: 4, month: 'April', available: false, time: '10:00' }
 
 ]
 
@@ -40,7 +40,7 @@ const arr= [ {id : 1,month : 'November',available : true , time :'!5:00' },
 
 //     //filtering array values based on select and consoling it
 //     const new_list = arr.filter((element)=>{
-        
+
 //         if (value === 'all'){ return true}
 
 //         //if option is available then return arr elements with available is true
@@ -61,30 +61,31 @@ const arr= [ {id : 1,month : 'November',available : true , time :'!5:00' },
 // }
 
 
-class List extends React.Component{
+class List extends React.Component {
 
-    constructor(props){
+    constructor(props) {
 
         super(props); //must call super constructor
         this.state = {
-            data :arr
+            data: arr,
+            dstate: 'all'
         }
 
     }
 
-    deleteData = (element)=>{
+    deleteData = (element) => {
 
         //console.log(element.id)
 
-     const new_arr = this.state.data.filter((ele)=>{
-        return element.id !== ele.id
-     })
+        const new_arr = this.state.data.filter((ele) => {
+            return element.id !== ele.id
+        })
 
-     this.setState(
-        {
-            data:new_arr
-        }
-     )
+        this.setState(
+            {
+                data: new_arr
+            }
+        )
 
 
     }
@@ -108,59 +109,80 @@ class List extends React.Component{
         //console.log(value, '     ', new_list);
 
         this.setState({
-            data: new_list
+            data: new_list,
+            dstate: event.target.value
+            //changing value of dropdown according to change
         });
-    };
 
-render(){
-   
-return(
-<div className='list-div'>
-<Header />
+    }
 
 
+    dropState = (value) => {
+        const new_list = arr.filter((element) => {
+
+            if (value === true) { return value === element.available }
+            if (value === false) { return value === element.available }
+            return false;
+
+        });
+        console.log('comes,', new_list)
+
+
+        this.setState({
+            data: new_list,
+            dstate: value === true ? 'available' : 'unavailable'
+        })
+    }
+
+    render() {
+
+        return (
+            <div className='list-div'>
+                <Header />
 
 
 
-{/* day1 */}
-{/*<Label />  {/* Render Label component again */}
-            {/* Render Label component again */}
-
-{/* dropdown day 3 */}
 
 
+                {/* day1 */}
+                {/*<Label />  {/* Render Label component again */}
+                {/* Render Label component again */}
 
-<Drop  onAction = {this.dropDownHandle}/>
-
-
-
-    <div className='app-div'>
-
- {   this.state.data.map((element,index)=> {
-
-        //ondelete want to pass the object so make a new function and call from it
-       // return <Appoinment onDelete= {this.deleteData} key={index} available={element.available} month={element.month} time={element.time} />
-        return <Appoinment onDelete= {()=>{
-
-            this.deleteData(element)
-
-        }}
-         key={index}
-          available={element.available} 
-          month={element.month} 
-          time={element.time} 
-          />
-    
-    })
-}
-</div>
-
-<Footer />
-</div>
+                {/* dropdown day 3 */}
 
 
-)
+                {/* passing select value  */}
+                <Drop dropstate={this.state.dstate} onAction={this.dropDownHandle} />
 
-}
+
+
+                <div className='app-div'>
+
+                    {this.state.data.map((element, index) => {
+
+                        //ondelete want to pass the object so make a new function and call from it
+                        // return <Appoinment onDelete= {this.deleteData} key={index} available={element.available} month={element.month} time={element.time} />
+                        return <Appoinment dropstate={this.dropState} onDelete={() => {
+
+                            this.deleteData(element)
+
+                        }}
+                            key={index}
+                            available={element.available}
+                            month={element.month}
+                            time={element.time}
+                        />
+
+                    })
+                    }
+                </div>
+
+                <Footer />
+            </div>
+
+
+        )
+
+    }
 }
 export default List;

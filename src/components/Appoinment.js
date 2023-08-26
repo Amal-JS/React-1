@@ -9,19 +9,18 @@ sim = ()=>{
     //console.log(this.props)
 }
 
-handleClick =() => {
-    alert(`Your appoinment is in ${this.props.month}`)}  //always use arrow function
 
 
 render(){
-    {this.sim()}
+    {this.sim()}  //just calling a function
     return(
 
         <div className='App-div'>
             <hr />
             <p>{this.props.month}</p>
             <p>{this.props.time}</p>
-            <button style={this.style} onClick={this.handleClick}>{this.props.available ? 'Available' : 'Not Available'} </button>
+            {/* arrow function calling function from list2.js */}
+            <button style={this.style} onClick={() => this.props.dropstate(this.props.available)}>{this.props.available ? 'Available' : 'Not Available'} </button>
             <label onClick={this.props.onDelete}>delete</label>
             <hr />
         </div>

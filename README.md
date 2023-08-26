@@ -131,3 +131,23 @@ Day 3
 Today we are gonna see how to pass data from one component to another component.
 
 1. Adding a select (dropdown) below header component in List2.js
+
+
+---------------------------------------------------------------------------------------------
+Day 4
+--------------------------------------------------------------------------------------------
+
+Today we are gonna improve the dropdown if you click the dropdown item it will only show elements based to that,
+and gonna delete the item each only from state not from array
+
+    ==> When you are passing a function as props and function takes an argument ,when you are calling it passing values use a arrow function on 'onClick' event then call the function pass argument -- Appoinment component (Available / Unavailable)
+
+    ==>Added a label with delete when clicking it call a function , that function , particular object id is passed from list2.js component. For identifying each object a new key value pair added with id 
+
+-----------------------------------------------------------------------------------------------
+Day 5 
+-----------------------------------------------------------------------------------------------
+
+Today we are gonna display value according to selection in element on  select
+
+    ==>For this there is value attribute in select which will display the value when changed , a function is used there
