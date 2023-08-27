@@ -11,6 +11,8 @@ sim = ()=>{
 
 
 
+
+
 render(){
     {this.sim()}  //just calling a function
     return(

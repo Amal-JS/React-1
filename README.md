@@ -151,3 +151,34 @@ Day 5
 Today we are gonna display value according to selection in element on  select
 
     ==>For this there is value attribute in select which will display the value when changed , a function is used there
+
+---------------------------------------------------------------------------------------------------------
+
+Day 6
+ 
+Life cycle methods , -- used for network calls
+
+    New component added Dummy.js where it will be rendered when clicking about, contact , about, sign in
+
+    home will be rendered automatically
+    s_component a new key value pair added to render when clicking header elements
+
+    1, ComponentDidMount
+
+        Will be called when Component first renders
+
+
+
+    2,ComponentDidUpdate
+
+        when change the state , automatically call the DidUpdate method
+
+        Be carefull when state change , else will raise error
+
+        method have two arguments  previous state and previous props , compare state key values and update else will cause recursion
+
+
+
+    3,ComponentWillUnmount --- depricated now
+
+        Clean up code

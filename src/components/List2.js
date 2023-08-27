@@ -6,6 +6,7 @@ import './List.css';
 import Appoinment from './Appoinment';
 //day 3 
 import Drop from './Dropdown';
+import Dummy from './Dummy';
 
 
 
@@ -68,9 +69,10 @@ class List extends React.Component {
         super(props); //must call super constructor
         this.state = {
             data: arr,
-            dstate: 'all'
+            dstate: 'all',
+            s_component:'home'
         }
-
+        
     }
 
     deleteData = (element) => {
@@ -134,11 +136,67 @@ class List extends React.Component {
         })
     }
 
+
+    state_component =(value)=>{
+        this.setState({
+            s_component:value
+        })
+    }
+    
+
+
+    selectComponent =()=>{
+        const value = this.state.s_component
+        
+
+        switch (value){
+            case 'home':
+                return this.state.data.map((element, index) => {
+
+                    //ondelete want to pass the object so make a new function and call from it
+                    // return <Appoinment onDelete= {this.deleteData} key={index} available={element.available} month={element.month} time={element.time} />
+                    return <Appoinment dropstate={this.dropState} onDelete={() => {
+
+                        this.deleteData(element)
+
+                    }}
+                        key={index}
+                        available={element.available}
+                        month={element.month}
+                        time={element.time}
+                    />
+
+                })
+                
+                
+                case 'contact':
+                    return <Dummy head_component="Contact" />;
+                case 'about':
+                    return <Dummy head_component="About" />;
+                case 'sign in':
+                    return <Dummy head_component="Sign In" />;
+            default:
+                return null;
+
+        }
+    }
+//life cycle methods 
+
+componentDidMount=()=>{
+    console.log("Component Mounted : Home")
+}
+componentDidUpdate=()=>{
+    console.log("Component Updated : Home")
+}
+
+
+
+
     render() {
 
         return (
             <div className='list-div'>
-                <Header />
+                <Header switch_components={this.state_component} />
 
 
 
@@ -158,23 +216,8 @@ class List extends React.Component {
 
                 <div className='app-div'>
 
-                    {this.state.data.map((element, index) => {
-
-                        //ondelete want to pass the object so make a new function and call from it
-                        // return <Appoinment onDelete= {this.deleteData} key={index} available={element.available} month={element.month} time={element.time} />
-                        return <Appoinment dropstate={this.dropState} onDelete={() => {
-
-                            this.deleteData(element)
-
-                        }}
-                            key={index}
-                            available={element.available}
-                            month={element.month}
-                            time={element.time}
-                        />
-
-                    })
-                    }
+                {this.selectComponent()}
+                   
                 </div>
 
                 <Footer />
